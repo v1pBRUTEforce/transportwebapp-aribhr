@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Control Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="admin-panel">
+        <h2>Admin Control Panel</h2>
+        <div class="user-list">
+            {% for user in users %}
+            <div class="user">
+                <p><strong>Username:</strong> {{ user.username }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <button onclick="location.href='/user/profile/{{ user.id }}'">View Profile</button>
+                <button onclick="deactivateUser({{ user.id }})">Deactivate User</button>
+                <button onclick="deleteUser({{ user.id }})">Delete User</button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Example JavaScript functions for button actions -->
+    <script>
+        function deactivateUser(userId) {
+            // Example: AJAX request to deactivate user with userId
+            console.log('Deactivating user with ID:', userId);
+        }
+
+        function deleteUser(userId) {
+            // Example: AJAX request to delete user with userId
+            console.log('Deleting user with ID:', userId);
+        }
+    </script>
+</body>
+</html>

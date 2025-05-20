@@ -1,0 +1,9 @@
+{
+    "name": "user/tu-to_mvc",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {}
+}
